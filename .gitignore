@@ -1,0 +1,22 @@
+# IDEA internals
+/.idea/artifacts
+/.idea/sonarlint
+/.idea/workspace.xml
+/.idea/usage.statistics.xml
+/.idea/modules
+/.idea/modules.xml
+/.idea/dictionaries
+/.idea/.name
+/.idea/jarRepositories.xml
+/.idea/markdown-navigator-enh.xml
+/.idea/markdown-navigator.xml
+/.idea/markdown-navigator
+/.idea/codeStyles/
+/.idea/shelf/
+/.idea/compiler.xml
+/.idea/gradle.xml
+
+# Builds artefacts
+/build
+/.gradle
+/scheldule2021_generated.xls
