@@ -12,15 +12,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class CalendarGenerator {
     private static final int YEAR = 2021;
 
     public static void main(final String[] args) throws IOException, BiffException, WriteException {
-        final InputStream orStream = CalendarGenerator.class.getClassLoader().getResourceAsStream("scheldule2020.xls");
-        final File newFile = new File("scheldule" + YEAR + "_generated.xls");
-        final WritableWorkbook workbook = Workbook.createWorkbook(newFile, Workbook.getWorkbook(orStream));
+        final InputStream orStream = CalendarGenerator.class.getClassLoader().getResourceAsStream("schedule2020.xls");
+        final File newFile = new File("schedule" + YEAR + "_generated.xls");
+        final WritableWorkbook workbook = Workbook.createWorkbook(newFile, Workbook.getWorkbook(Objects.requireNonNull(orStream)));
         final WritableSheet sheet = workbook.getSheet(0);
         int i = 26;
         final GregorianCalendar gregorianCalendar = new GregorianCalendar(YEAR, Calendar.JANUARY, 1);
@@ -43,6 +44,7 @@ public class CalendarGenerator {
             sheet.addCell(new Formula(3, i, String.format("B%d+$A$3+F%1$d", i + 1), cellFormat));
             sheet.addCell(new Formula(4, i, String.format("C%d-B%1$d-F%1$d", i + 1), cellFormat));
         }
+        orStream.close();
         workbook.write();
         workbook.close();
     }
