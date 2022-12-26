@@ -16,7 +16,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class CalendarGenerator {
-    private static final int YEAR = 2021;
+    private static final int YEAR = 2023;
 
     public static void main(final String[] args) throws IOException, BiffException, WriteException {
         final InputStream orStream = CalendarGenerator.class.getClassLoader().getResourceAsStream("schedule2020.xls");
